@@ -1,4 +1,3 @@
-06.11.2022
 HTTP request and response
 - request
   - method type: eg. GET, POST, etc.
@@ -11,7 +10,7 @@ HTTP request and response
   - cookies
   - body of the response
 - response codes families
-  - 1xx - accepted - processing in progress 
+  - 1xx - accepted - processing in progress
   - 2xx - OK
   - 3xx - redirects
   - 4xx - client fault
@@ -26,15 +25,18 @@ REST - hierarchical resources
   - Read one item
     - url: /incomes/{id}
     - GET http method
-    - return: 
+    - return:
       - existing income: single item + 200 Http return code
-      - nonexistent income: error object + 404 Http return code 
+      - nonexistent income: error object + 404 Http return code
   - Create:
     - url: /incomes
     - POST http method
   - Delete:
     - url: /incomes/{id}
     - DELETE http method
+    - return:
+      - existing income: empty body + 204 Http return code
+      - nonexistent income: error object + 404 Http return code
   - Update:
     - url: /incomes/{id}
     - PUT http method - full update - replace
@@ -88,7 +90,7 @@ Business requirements
 - OK - income and outcome
   - category of income
   - category of expense
-  - currency: Euros, 
+  - currency: Euros,
   - person who made income/expense
   - each event timestamp - GMT
   - name of the place
