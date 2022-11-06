@@ -17,4 +17,5 @@ public class IncomeAdvisor {
         log.info("handling not found incomes");
         return "cannot find this income";
     }
-}
+
+} //END
