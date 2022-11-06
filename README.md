@@ -1,3 +1,4 @@
+06.11.2022
 HTTP request and response
 - request
   - method type: eg. GET, POST, etc.
