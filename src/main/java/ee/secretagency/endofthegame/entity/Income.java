@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -18,6 +20,7 @@ public class Income {
     // TODO: improve generation of id
     @Id
     Long id;
+    @Enumerated(EnumType.STRING)
     IncomeCategory category;
     String currency;
     BigDecimal amount;
