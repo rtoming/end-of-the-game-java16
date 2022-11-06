@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
 @Entity
+@Table(name = "INCOMES")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
