@@ -6,9 +6,10 @@ import ee.secretagency.endofthegame.repository.IncomesRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+
 
 @Service
 @Slf4j
@@ -70,5 +71,18 @@ public class IncomesService {
             throw new IncomeNotFoundException("No existing income", exc);
         }
     }
+
+    @Transactional // thanks for that we execute exist and delete together
+    public void deleteIncomeWithIdBetter(Long id) {
+        log.info("DELETING INCOME with ID: [{}]", id);
+
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+        } else {
+            throw new IncomeNotFoundException("No existing income with id: [%d]".formatted(id));
+        }
+    }
+
+
 
 } //END
